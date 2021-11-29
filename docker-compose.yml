@@ -1,0 +1,16 @@
+version: '3.2'
+services:
+  #app:
+  #  image: project1/php-app
+  #  container_name: php
+  #  restart: unless-stopped
+  #  ports:
+  #    - 80:80
+
+  python:
+    image: project1/python
+    container_name: python
+    restart: unless-stopped
+    ports:
+      - 80:80
+      #- 8080:80
