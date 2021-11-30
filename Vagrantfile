@@ -28,6 +28,9 @@ Vagrant.configure("2") do |config|
       #sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       #sudo chmod +x /usr/local/bin/docker-compose
 
+      # delete all images:
+      # docker rmi -f $(docker images -aq)
+
       # php
       docker build -t project1/php /vagrant/php/;
       docker run -dit --name php -p 8080:80 project1/php;
@@ -37,6 +40,11 @@ Vagrant.configure("2") do |config|
       docker build -t project1/python /vagrant/python/;
       docker run -dit --name python -p 8081:80 project1/python;
       docker exec -it python bash
+
+      # Apache
+      #docker build -t project1/apache /vagrant/apache/;
+      #docker run -dit --name apache -p 8082:80 project1/apache;
+      #docker exec -it apache bash
 
       # Apache + PHP 7.0
       # cp /vagrant/php/Dockerfile /home/vagrant/;
