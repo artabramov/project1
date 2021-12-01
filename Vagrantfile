@@ -25,21 +25,24 @@ Vagrant.configure("2") do |config|
       sudo usermod -aG docker vagrant;
       
       # Docker Compose
-      #sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-      #sudo chmod +x /usr/local/bin/docker-compose
+      sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
 
       # delete all images:
       # docker rmi -f $(docker images -aq)
 
       # php
       docker build -t project1/php /vagrant/php/;
-      docker run -dit --name php -p 8080:80 project1/php;
-      docker exec -it php bash
+      #docker run -dit --name php -p 8080:80 project1/php;
+      #docker exec -it php bash
 
       # Python
       docker build -t project1/python /vagrant/python/;
-      docker run -dit --name python -p 8081:80 project1/python;
-      docker exec -it python bash
+      #docker run -dit --name python -p 8081:80 project1/python;
+      #docker exec -it python bash
+
+      # compose
+      docker-compose up -d;
 
       # Apache
       #docker build -t project1/apache /vagrant/apache/;
