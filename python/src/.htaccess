@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule "/value/(.*)$" "/?value=$1" [QSA,L]
+RewriteRule "/key/(.*)$" "/?key=$1" [QSA,L]

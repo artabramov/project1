@@ -12,6 +12,7 @@ RUN rm -R /root/.tmp
 
 # apache
 RUN apt-get install -y apache2 apache2-dev
+COPY ./src/.htaccess ./
 RUN a2enmod rewrite
 RUN apt-get clean
 
